@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.asmita.lpractice.SelectChapter"
+    tools:showIn="@layout/activity_select_chapter">
+
+    <item android:id="@+id/home"
+        android:title="Home"
+        android:showAsAction="ifRoom|withText" />
+        <!--android:titleCondensed="string"
+        android:icon="@[package:]drawable/drawable_resource_name"
+        android:onClick="method name"
+        android:showAsAction=["ifRoom" | "never" | "withText" | "always" | "collapseActionView"]
+        android:actionLayout="@[package:]layout/layout_resource_name"
+        android:actionViewClass="class name"
+        android:actionProviderClass="class name"
+        android:alphabeticShortcut="string"
+        android:numericShortcut="string"
+        android:checkable=["true" | "false"]
+        android:visible=["true" | "false"]
+        android:enabled=["true" | "false"]
+        android:menuCategory=["container" | "system" | "secondary" | "alternative"]
+        android:orderInCategory="integer" />
+        <group android:id="@[+][package:]id/resource name"
+            android:checkableBehavior=["none" | "all" | "single"]
+        android:visible=["true" | "false"]
+        android:enabled=["true" | "false"]
+        android:menuCategory=["container" | "system" | "secondary" | "alternative"]
+        android:orderInCategory="integer" >-->
+
+    <item android:id="@+id/kids_menu"
+        android:title="Kids Zone"
+        android:showAsAction="ifRoom|withText" >
+        <menu>
+            <item android:id="@+id/Child1"
+                android:title="Awanti" >
+            <menu>
+                <item android:id="@+id/FA"
+                    android:title="Free Assessment" />
+                <item android:id="@+id/AA"
+                    android:title="Advanced Assessment" />
+            </menu>
+            </item>
+            <item android:id="@+id/Child2"
+                android:title="Riya" />
+        </menu>
+    </item>
+    <item android:id="@+id/contact_us"
+        android:title="Contact Us"
+        android:showAsAction="ifRoom|withText" />
+
+</menu>
