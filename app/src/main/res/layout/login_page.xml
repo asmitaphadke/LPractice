@@ -21,16 +21,19 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/login"
         android:textAlignment="textStart"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"/>
 
     <EditText android:id="@+id/login_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="@string/login_email"
         android:layout_below="@+id/login"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="50dp"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"/>
 
     <EditText android:id="@+id/login_password"
@@ -38,8 +41,10 @@
         android:layout_height="wrap_content"
         android:hint="@string/login_password"
         android:layout_below="@+id/login_email"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="50dp" />
+        android:inputType="textPassword"
+        android:layout_marginStart="30dp"
+        android:maxLines="1"
+        android:singleLine="true"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -60,7 +65,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/forgot_pwd"
         android:layout_below="@+id/button_login"
-        android:textColor="#ed1515"
+        android:textColor="@color/colorRed"
         android:layout_marginStart="200dp"
         android:layout_marginTop="10dp"/>
 

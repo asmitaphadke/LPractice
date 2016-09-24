@@ -40,7 +40,11 @@
             android:name=".Result"
             android:label="@string/title_activity_result"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Dashboard"></activity>
+        <activity android:name=".Dashboard" />
+        <activity
+            android:name=".ShowRating"
+            android:label="@string/title_activity_show_rating"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

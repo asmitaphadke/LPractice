@@ -40,8 +40,7 @@
             android:layout_alignBottom="@+id/score"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-
-            android:gravity="center" />
+            android:textStyle="bold"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -55,6 +54,19 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:onClick="backToHome"/>
+
+        <GridView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:numColumns="1"
+            android:id="@+id/grid_qs"
+            android:columnWidth="200dp"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10dp"
+            android:scrollbars="vertical"/>
+
 
         <!--<LinearLayout
             android:orientation="vertical"

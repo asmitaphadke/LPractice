@@ -2,7 +2,7 @@
     <string name="app_name">LPractice</string>
     <string name="action_settings">Settings</string>
     <string name="login_email">Email</string>
-    <string name="login_password">Password (Min 6/Max 8 characters)</string>
+    <string name="login_password">Password(6to8 characters)</string>
     <string name="button_login">Login</string>
     <string name="title_activity_display_message">Login Successful...</string>
     <string name="title_activity_login">Sign in</string>
@@ -31,4 +31,5 @@
     <string name="title_activity_select_chapter">SelectChapter</string>
     <string name="title_activity_mcq">MCQ</string>
     <string name="title_activity_result">Result</string>
+    <string name="title_activity_show_rating">ShowRating</string>
 </resources>

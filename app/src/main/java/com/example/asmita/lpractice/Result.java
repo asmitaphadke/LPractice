@@ -7,8 +7,16 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.GridView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Result extends AppCompatActivity {
+
+    List<ResultsData> qslist;
+    GridView qsgrid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +25,34 @@ public class Result extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // Inserting Rating data in Grid
+        qslist=new ArrayList<ResultsData>();
+        qsgrid = (GridView) findViewById(R.id.grid_qs);
 
+        qslist.add(new ResultsData(
+                "Question: The noun 'birds' is a",
+                "Correct Answer:  common noun",
+                "Chosen Answer:  common noun "));
+        qslist.add(new ResultsData(
+                "Question : The noun 'rose' is a",
+                "Correct Answer:  proper noun",
+                "Chosen Answer:  common noun"));
+        qslist.add(new ResultsData(
+                "Question : The noun 'village' is a",
+                "Correct Answer:  common noun",
+                "Chosen Answer:  common noun"));
+        qslist.add(new ResultsData(
+                "Question : The noun ' Rajesh' is a",
+                "Correct Answer:  proper noun",
+                "Chosen Answer:  proper noun "));
+        qslist.add(new ResultsData(
+                "Question : We say' a _____of ants'",
+                "Correct Answer:  swarm",
+                "Chosen Answer:  colony"));
+
+        ResultsArrayAdapter adp=new ResultsArrayAdapter (this,
+                R.layout.result_questions, qslist);
+        qsgrid.setAdapter(adp);
     }
     /** Called when the user clicks the SubmitTest button */
     public void backToHome(View view) {

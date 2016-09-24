@@ -18,60 +18,52 @@ tools:showIn="@layout/activity_dashboard">
     android:layout_height="match_parent"
     android:layout_alignParentStart="true"
     android:weightSum="1"
-    android:id="@+id/mcq">
+    android:id="@+id/dashboard">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Awanti's Scorecard for "
+        android:text="Pending School Test(s)"
         android:id="@+id/scorecard"
         android:textAlignment="textStart"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorBlue"/>
 
-    <Spinner
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/sub_names_db"
-        android:layout_alignBottom="@+id/scorecard"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="School Tests Rating"
-        android:id="@+id/schoolTestRating"
-        android:textAlignment="textStart"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorGreen"
-        android:textColor="@color/colorWhite"/>
+        android:layout_height="100dp"
+        android:id="@+id/scrollView"
+        android:fillViewport="true"
+        android:scrollbars = "vertical"
+        android:scrollbarStyle="insideInset">
 
     <GridView
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="100dp"
         android:layout_marginTop="10dp"
-        android:numColumns="2"
-        android:id="@+id/grid_schoolTestRating"
+        android:layout_marginStart="20dp"
+        android:numColumns="1"
+        android:id="@+id/grid_pendingSchoolTests"
         android:columnWidth="100dp"
         android:stretchMode="columnWidth"/>
+        <!--android:scrollbars="vertical"/-->
 
+    </ScrollView>
 
     <Button
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:text="Pending School Tests"
+        android:text="School Test Ratings"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/button_pendingTests"
+        android:id="@+id/button_SchoolTests"
         android:background="@color/colorGreen"
         android:textColor="@color/colorWhite"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="20dp"
         android:layout_below="@+id/grid_schoolTestRating"
-        android:onClick="beginPendingTest"/>
+        android:onClick="showSchoolTestResults"/>
 
     <Button
         android:layout_width="200dp"
@@ -83,7 +75,7 @@ tools:showIn="@layout/activity_dashboard">
         android:textColor="@color/colorWhite"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_below="@+id/button_pendingTests"
+        android:layout_below="@+id/button_SchoolTests"
         android:onClick="beginFreeTest"/>
 
 

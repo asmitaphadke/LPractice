@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.asmita.lpractice.SelectChapter">
+    tools:context="com.example.asmita.lpractice.ShowRating">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -18,19 +18,18 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorGray"
             app:popupTheme="@style/AppTheme.PopupOverlay">
-
-            <ImageView
-                android:layout_height="wrap_content"
+        <ImageView
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/TBLPImage"
             android:src="@mipmap/lp_logo"
             android:layout_marginLeft="0dp"/>
 
-        </android.support.v7.widget.Toolbar>
+    </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_select_chapter" />
+    <include layout="@layout/content_show_rating" />
 
 
 </android.support.design.widget.CoordinatorLayout>
