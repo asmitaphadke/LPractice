@@ -28,10 +28,10 @@ public class Dashboard extends AppCompatActivity {
         list=new ArrayList<String>();
         grid = (GridView) findViewById(R.id.grid_pendingSchoolTests);
 
-        list.add("English : Nouns");
-        list.add("Maths : Fractions");
-        list.add("English : Adjectives");
-        list.add("Maths : Number Division");
+        list.add("1 English : Nouns");
+        list.add("2 Maths : Fractions");
+        list.add("3 English : Adjectives");
+        list.add("4 Maths : Number Division");
 
         ArrayAdapter<String> adp=new ArrayAdapter<String> (this,
                 android.R.layout.simple_dropdown_item_1line,list);

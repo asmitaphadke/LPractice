@@ -28,7 +28,9 @@
                 android:id="@+id/scorecard"
                 android:textAlignment="textStart"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="20dp"
+                android:background="@color/colorGreen"
+                android:textColor="@color/colorWhite"/>
 
             <Spinner
                 android:layout_width="match_parent"
@@ -36,7 +38,7 @@
                 android:id="@+id/sub_names_db"
                 android:layout_alignBottom="@+id/scorecard"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="20dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -47,12 +49,12 @@
                 android:textAlignment="textStart"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="30dp"
-                android:background="@color/colorGreen"
+                android:background="@color/colorBlue"
                 android:textColor="@color/colorWhite"/>
 
             <GridView
                 android:layout_width="match_parent"
-                android:layout_height="130dp"
+                android:layout_height="200dp"
                 android:layout_marginTop="10dp"
                 android:numColumns="2"
                 android:id="@+id/grid_schoolTestRating"
@@ -70,7 +72,7 @@
             android:textColor="@color/colorWhite"
             android:layout_alignBottom="@+id/grid_schoolTestRating"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:onClick="srBackToHome"/>
 
 

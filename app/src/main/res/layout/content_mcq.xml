@@ -28,7 +28,8 @@
         android:id="@+id/sub_chapter_selection"
         android:textAlignment="textStart"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"/>
     <!--android:background="#56924d" />-->
 
     <TextView
@@ -39,7 +40,7 @@
         android:id="@+id/question_number"
         android:layout_alignBottom="@+id/sub_chapter_selection"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
 
         android:gravity="center"
         android:background="@color/colorGreen" />
@@ -48,13 +49,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Revision The Noun 'birds' is a "
+
         android:id="@+id/mcq_question"
         android:textAlignment="textStart"
         android:layout_alignBottom="@+id/question_number"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"/>
-
+        <!--android:text="Revision The Noun 'birds' is a "-->
 
         <LinearLayout
             android:orientation="vertical"
@@ -63,6 +64,7 @@
             android:layout_below="@+id/mcq"
             android:weightSum="1"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
             android:id="@+id/mcq_options">
         </LinearLayout>
 
@@ -79,6 +81,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/previmg"
                 android:src="@mipmap/prev"
+                android:clickable="true"
                 android:layout_alignParentLeft="true"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"/>
@@ -88,6 +91,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/nextimg"
                 android:src="@mipmap/next"
+                android:clickable="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="100dp"/>
@@ -104,6 +108,7 @@
             android:layout_gravity="center"
             android:background="@color/colorGreen"
             android:textColor="@color/colorWhite"
+            android:layout_marginTop="20dp"
             android:onClick="submitTest"/>
          </LinearLayout>
 </RelativeLayout>

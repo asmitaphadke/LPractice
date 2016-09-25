@@ -29,26 +29,27 @@ public class Result extends AppCompatActivity {
         qslist=new ArrayList<ResultsData>();
         qsgrid = (GridView) findViewById(R.id.grid_qs);
 
+
         qslist.add(new ResultsData(
                 "Question: The noun 'birds' is a",
                 "Correct Answer:  common noun",
                 "Chosen Answer:  common noun "));
         qslist.add(new ResultsData(
-                "Question : The noun 'rose' is a",
+                "Question : The Noun 'India' is a",
                 "Correct Answer:  proper noun",
                 "Chosen Answer:  common noun"));
         qslist.add(new ResultsData(
-                "Question : The noun 'village' is a",
+                "Question : Type of Noun 'book' is",
                 "Correct Answer:  common noun",
                 "Chosen Answer:  common noun"));
         qslist.add(new ResultsData(
-                "Question : The noun ' Rajesh' is a",
+                "Question : The Noun 'Riya' is a",
                 "Correct Answer:  proper noun",
                 "Chosen Answer:  proper noun "));
         qslist.add(new ResultsData(
-                "Question : We say' a _____of ants'",
-                "Correct Answer:  swarm",
-                "Chosen Answer:  colony"));
+                "Question : Type of Noun 'village' is",
+                "Correct Answer:  common noun",
+                "Chosen Answer:  proper noun"));
 
         ResultsArrayAdapter adp=new ResultsArrayAdapter (this,
                 R.layout.result_questions, qslist);

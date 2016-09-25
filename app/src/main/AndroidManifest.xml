@@ -9,14 +9,16 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/app_logo"
         android:label=""
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- android:label="@string/app_name" -->
+        <!-- android:label="Lets Practise"
+        android:label="@string/app_name" -->
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,26 +27,36 @@
             </intent-filter>
         </activity>
         <!-- android:label="@string/app_name" -->
-        <activity android:name=".LoginInfo" />
-        <activity android:name=".LoginActivity" />
+        <activity
+            android:name=".LoginInfo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait" />
         <!-- android:label="@string/title_activity_login" /> -->
         <activity
             android:name=".SelectChapter"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <!-- android:label="@string/title_activity_select_chapter" -->
         <activity
             android:name=".MCQ"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <!-- android:label="@string/title_activity_mcq" -->
         <activity
             android:name=".Result"
-            android:label="@string/title_activity_result"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Dashboard" />
+        <!--android:label="@string/title_activity_result"-->
+        <activity
+            android:name=".Dashboard"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ShowRating"
-            android:label="@string/title_activity_show_rating"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <!--android:label="@string/title_activity_show_rating"-->
     </application>
 
 </manifest>

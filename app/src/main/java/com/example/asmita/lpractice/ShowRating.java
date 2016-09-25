@@ -42,10 +42,12 @@ public class ShowRating extends AppCompatActivity {
                  //grid=(GridView) findViewById(R.id.gridView1);
                  ratinggrid = (GridView) findViewById(R.id.grid_schoolTestRating);
 
-        ratinglist.add("Nouns");
-        ratinglist.add("Well Done...");
-        ratinglist.add("Adjectives");
-        ratinglist.add("Excellent!");
+                ratinglist.add("Nouns");
+                ratinglist.add("Well Done...");
+                ratinglist.add("Adjectives");
+                ratinglist.add("Well Done...");
+                ratinglist.add("Adjectives");
+                ratinglist.add("Excellent!");
 
                  ArrayAdapter<String> adp=new ArrayAdapter<String> (this,
                  android.R.layout.simple_dropdown_item_1line,ratinglist);
