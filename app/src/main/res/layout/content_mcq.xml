@@ -106,7 +106,9 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:id="@+id/button_submittest"
             android:layout_gravity="center"
-            android:background="@color/colorGreen"
+            android:background="@layout/rounded_button_settings"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
             android:textColor="@color/colorWhite"
             android:layout_marginTop="20dp"
             android:onClick="submitTest"/>
