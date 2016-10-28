@@ -1,106 +1,79 @@
 package com.example.asmita.lpractice;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
+import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class MCQ extends AppCompatActivity {
+/**
+ * Created by Asmita on 27-09-2016.
+ * Object of MCQ class holds the Information about
+ * a MCQ, for the selected Test, received from the Server.
 
-    TextView mcqQuestion;
-    TextView showingQuestionText;
-    List<String> mcqQuestionList;
-    ImageView previousQuestion;
-    ImageView nextQuestion;
-    int showingQuestion = 0;
-    int totalQuestions;
+ */
+
+/* JSON format for MCQ question
+ {
+    "qbmcq_id": 29906,
+    "qbmain_id": 231040,
+    "question_text": "The numerator of fraction 3/7 is ",
+    "qbmcq_option1": "3",
+    "qbmcq_option2": "7",
+    "qbmcq_option3": "4",
+    "qbmcq_option4": "10",
+    "qbmcq_option5": "",
+    "qbmcq_option6": "",
+    "answer_text": null,
+    "question_upload_file": ""
+  }
+ */
+public class MCQ {
+
+    @SerializedName("qbmcq_id")
+    private int mMCQId;
+    @SerializedName("qbmain_id")
+    private String mMainID;
+    @SerializedName("question_text")
+    private String mMCQQuestionText;
+    @SerializedName("qbmcq_option1")
+    private String mMCQOption1;
+    @SerializedName("qbmcq_option2")
+    private String mMCQOption2;
+    @SerializedName("qbmcq_option3")
+    private String mMCQOption3;
+    @SerializedName("qbmcq_option4")
+    private String mMCQOption4;
+    @SerializedName("qbmcq_option5")
+    private String mMCQOption5;
+    @SerializedName("qbmcq_option6")
+    private String mMCQOption6;
+    @SerializedName("answer_text")
+    private String mAnswerText;
+    @SerializedName("question_upload_file")
+    private String mQuestionUploadFile;
+
+    private MCQ() {}
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mcq);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+    public String toString() {
+        return "MCQData{" +
+                "mMCQId=" + mMCQId +
+                ", mMainID='" + mMainID + '\'' +
+                ", mMCQQuestionText='" + mMCQQuestionText + '\'' +
+                ", mMCQOption1='" + mMCQOption1 + '\'' +
+                ", mMCQOption2='" + mMCQOption2 + '\'' +
+                ", mMCQOption3='" + mMCQOption3 + '\'' +
+                ", mMCQOption4='" + mMCQOption4 + '\'' +
+                ", mMCQOption5='" + mMCQOption5 + '\'' +
+                ", mMCQOption6='" + mMCQOption6 + '\'' +
+                ", mAnswerText='" + mAnswerText + '\'' +
+                ", mQuestionUploadFile='" + mQuestionUploadFile +
 
-        //Set MCQquestions
-        mcqQuestionList =new ArrayList<String>();
-
-        mcqQuestionList.add("Revision : The Noun 'birds' is a ");
-        mcqQuestionList.add("The Noun 'India' is a ");
-        mcqQuestionList.add("Type of Noun 'book' is ");
-        mcqQuestionList.add("The Noun 'Riya' is a ");
-        mcqQuestionList.add("Type of Noun 'village' is ");
-        totalQuestions = mcqQuestionList.size();
-
-        mcqQuestion = (TextView) findViewById(R.id.mcq_question);
-        previousQuestion = (ImageView)findViewById(R.id.previmg) ;
-        nextQuestion = (ImageView)findViewById(R.id.nextimg) ;
-        showingQuestionText = (TextView) findViewById(R.id.question_number);
-
-        LinearLayout mcqlayout = (LinearLayout) findViewById(R.id.mcq_options);
-
-        previousQuestion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showingQuestion--;
-                if (showingQuestion < 0) {
-                    showingQuestion = 0;
-                }
-                setMcqQuestion();
-            }
-        });
-
-        nextQuestion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showingQuestion++;
-                if (showingQuestion >= totalQuestions) {
-                    showingQuestion = totalQuestions-1;
-                }
-                setMcqQuestion();
-            }
-        });
-        // Set MCQoptions
-        RadioGroup mcqradioGroup = new RadioGroup(this);
-        LinearLayout.LayoutParams mcqp = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.FILL_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        );
-        mcqlayout.addView(mcqradioGroup, mcqp);
-
-        setMcqQuestion();
-        addMCQRadioButtons(mcqradioGroup, mcqp);
+                '}';
     }
 
-    private void setMcqQuestion() {
-        showingQuestionText.setText("Question No. " + (showingQuestion+1) + " of " + totalQuestions);
-        mcqQuestion.setText(mcqQuestionList.get(showingQuestion));
-    }
-    private void addMCQRadioButtons(final RadioGroup radioGroup, final LinearLayout.LayoutParams layout) {
-        String[] options = {"Proper Noun", "Common Noun", "Singular Noun", "None of these"};
 
-        for (String option: options) {
-            RadioButton radioButtonView = new RadioButton(this);
-            radioButtonView.setText(option);
-            //radioButtonView.setOnClickListener(this);
-            radioGroup.addView(radioButtonView, layout);
-        }
-    }
-
-    /** Called when the user clicks the SubmitTest button */
-    public void submitTest(View view) {
-
-        Intent intent = new Intent(this, Result.class);
-        startActivity(intent);
-
-    }
+    /*public String getPendingSchoolTestTopic() {
+        return mTopicName;
+    }*/
 }
+

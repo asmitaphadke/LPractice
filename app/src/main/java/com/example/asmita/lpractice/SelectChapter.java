@@ -19,6 +19,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 public class SelectChapter extends AppCompatActivity implements View.OnClickListener {
+    int selectedSubjectNo=0;
+    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +30,7 @@ public class SelectChapter extends AppCompatActivity implements View.OnClickList
         setSupportActionBar(toolbar);
 
         // ************   Trying to populate Spinner with Subjects
-        Spinner spinner = (Spinner) findViewById(R.id.sub_names);
+        spinner = (Spinner) findViewById(R.id.sub_names);
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.subjects, android.R.layout.simple_spinner_item);
@@ -37,8 +39,14 @@ public class SelectChapter extends AppCompatActivity implements View.OnClickList
         // Apply the adapter to the spinner
         spinner.setAdapter(adapter);
 
-        //setContentView(R.layout.content_select_chapter);
+        spinner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectedSubjectNo = (int) spinner.getSelectedItemId();
+            }
+        });
 
+        /*********** Initializing RadioGroup with options ***********/
         LinearLayout layout = (LinearLayout) findViewById(R.id.chapter_layout);
         RadioGroup radioGroup = new RadioGroup(this);
 
@@ -47,8 +55,8 @@ public class SelectChapter extends AppCompatActivity implements View.OnClickList
                 LinearLayout.LayoutParams.WRAP_CONTENT
         );
         layout.addView(radioGroup, p);
-
         addRadioButtons(radioGroup, p);
+
     }
 
     private void addRadioButtons(final RadioGroup radioGroup, final LinearLayout.LayoutParams layout) {
@@ -93,7 +101,7 @@ public class SelectChapter extends AppCompatActivity implements View.OnClickList
     /** Called when the user clicks the BeginTest button */
     public void beginTest(View view) {
 
-        Intent intent = new Intent(this, MCQ.class);
+        Intent intent = new Intent(this, MCQActivity.class);
         startActivity(intent);
 
     }
